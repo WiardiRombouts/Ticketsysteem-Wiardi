@@ -7,7 +7,7 @@ use App\Models\Event;
 
 class EventsController extends Controller
 {
-    public function viewEvent()
+    public function showCreateEvents()
     {
         return view('event');
     }
@@ -65,7 +65,7 @@ class EventsController extends Controller
         return redirect('admin');
     }
 
-    public function event_list(){
+    public function viewEvent(){
         $event = Event::all();
         
         return view('event_list' , [

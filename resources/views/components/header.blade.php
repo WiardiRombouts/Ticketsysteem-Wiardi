@@ -13,10 +13,10 @@
           <a class="nav-link active" aria-current="page" href="/about-us">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="{{ Route('contact') }}">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin">Admin</a>
+          <a class="nav-link" href="{{ Route('admin') }}">Admin</a>
         </li>
        
         <li class="nav-item dropdown">
@@ -25,11 +25,11 @@
           </a>
           <ul class="dropdown-menu">
             
-            <li><a class="dropdown-item" href="{{ Route('admin') }}">Evenementen Lijst</a></li>
+            {{-- <li><a class="dropdown-item" href="{{ Route('event-list') }}">Evenementen Lijst</a></li> --}}
             @if (Auth::user())
            
               <li><a class="dropdown-item" href="{{ Route('ticket') }}">Tickets</a></li>
-              <li><a class="dropdown-item" href="{{ Route('showEvents')}}">Events</a></li>
+              <li><a class="dropdown-item" href="{{ Route('event-list')}}">Bekijk Evenementen</a></li>
               <li class="dropdown-item">
                 <form action="{{route('logout')}}" method="POST">
                   @csrf

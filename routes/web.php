@@ -41,20 +41,20 @@ Route::post('/createTickets', [TicketsController::class, 'createTickets'])->name
 
 Route::post('/create_events', [EventsController::class, 'createEvents'])->name('createEvent');
 
-Route::get('/event' , [EventsController::class, 'viewEvent'])->middleware(['auth'])->name('showEvents');
+Route::get('/event' , [EventsController::class, 'showCreateEvents'])->middleware(['auth'])->name('showCreateEvents');
 
 
 
 Route::post('/create_account', [PageController::class, 'createContacts'])->name('createContacts');
 
-Route::get('/event_list' , [EventsController::class, 'index'])->name('admin')->middleware(['auth']);
+Route::get('/event_list' , [EventsController::class, 'viewEvent'])->name('event-list')->middleware(['auth']);
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware(['auth']);
 Route::get('/delete/{id}', [EventsController::class, 'delete'])->name('delete_event');
 
 Route::get('/edit_event/{eventId}', [EventsController::class, 'editEvent'])->name('edit_event');
 Route::post('/edit_event/{eventId}', [EventsController::class, 'processEditEvent'])->name('process_edit_event');
 
-Route::get('/event_list', [EventsController::class, 'event_list'])->name('event_list')->middleware(['auth']);
+// Route::get('/event_list', [EventsController::class, 'event_list'])->name('event_list')->middleware(['auth']);
 
 
 
