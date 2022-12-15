@@ -48,7 +48,7 @@ Route::get('/event' , [EventsController::class, 'showCreateEvents'])->middleware
 Route::post('/create_account', [PageController::class, 'createContacts'])->name('createContacts');
 
 Route::get('/event_list' , [EventsController::class, 'viewEvent'])->name('event-list')->middleware(['auth']);
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware(['auth']);
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware(['admin']);
 Route::get('/delete/{id}', [EventsController::class, 'delete'])->name('delete_event');
 
 Route::get('/edit_event/{eventId}', [EventsController::class, 'editEvent'])->name('edit_event');

@@ -15,9 +15,8 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ Route('contact') }}">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ Route('admin') }}">Admin</a>
-        </li>
+          {{-- <a class="nav-link" href="{{ Route('admin') }}">Admin</a> --}}
+        
        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,7 +26,9 @@
             
             {{-- <li><a class="dropdown-item" href="{{ Route('event-list') }}">Evenementen Lijst</a></li> --}}
             @if (Auth::user())
-           
+              @if (Auth::user() && Auth::user()->is_admin == 1)
+              <li><a class="dropdown-item" href="{{ Route('admin') }}">Admin</a></li>
+              @endif
               <li><a class="dropdown-item" href="{{ Route('ticket') }}">Tickets</a></li>
               <li><a class="dropdown-item" href="{{ Route('event-list')}}">Bekijk Evenementen</a></li>
               <li class="dropdown-item">
