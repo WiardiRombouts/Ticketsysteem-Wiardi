@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg bg-danger">
   <div class="container-fluid">
     
@@ -29,7 +27,7 @@
               @if (Auth::user() && Auth::user()->is_admin == 1)
               <li><a class="dropdown-item" href="{{ Route('admin') }}">Admin</a></li>
               @endif
-              <li><a class="dropdown-item" href="{{ Route('ticket') }}">Tickets</a></li>
+              <li><a class="dropdown-item" href="{{ Route('view-tickets') }}">Bekijk uw Tickets</a></li>
               <li><a class="dropdown-item" href="{{ Route('event-list')}}">Bekijk Evenementen</a></li>
               <li class="dropdown-item">
                 <form action="{{route('logout')}}" method="POST">

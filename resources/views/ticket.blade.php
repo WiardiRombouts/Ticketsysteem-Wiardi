@@ -12,17 +12,22 @@
     <div class="card-body">
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{route ('createTicket')}}">
        @csrf
-        <div class="form-group">
+        {{-- <div class="form-group">
           <label for="owner">Eigenaar</label>
           <input type="text" id="owner" name="owner" class="form-control" required="">
         </div>
         <div class="form-group">
           <label for="qr">QR code</label>
           <input type="text" id="qr" name="qr" class="form-control" required="">
-        </div>
+        </div> --}}
         <div class="form-group">
           <label for="event">Evenement</label>
-          <input type="text" id="event" name="event" class="form-control" required="">
+          <select name="event" id="event">
+            @foreach ($events as $event)
+              <option value="{{$event->id}}">{{$event->name}}</option>
+            @endforeach
+          </select>
+          
         </div>
        
         

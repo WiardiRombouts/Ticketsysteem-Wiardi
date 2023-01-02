@@ -66,13 +66,13 @@ h3{
 }
 
 #delete{
-	background-color: blue;
+	background-color: red;
 	padding: 5px;
 	border-radius: 5px;
 }
 
 #change{
-	background-color: red;
+	background-color: blue;
 	padding: 5px;
 	border-radius: 5px;
 }

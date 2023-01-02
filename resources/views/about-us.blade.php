@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-<h1>Wij zijn het zeker bestaande Ticketsysteem</h1>
+<h1>Lorem ipsum dolor sit amet.</h1>
 
 
 <div class="about-us row">

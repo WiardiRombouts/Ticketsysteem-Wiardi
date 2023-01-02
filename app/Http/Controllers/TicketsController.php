@@ -2,21 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use Illuminate\Support\Facades\Auth;
+use Nette\Utils\Random;
+use Illuminate\Support\Str;
+
 
 class TicketsController extends Controller
 {
     public function viewtemplate(){
-        return view('ticket');
+        $event = Event::all();
+        
+        return view('ticket',[
+            'events' => $event
+        ]);
     }
 
+    public function viewTickets(){
+        $ticket = Ticket::all();
+        $event = Event::all();
+
+        return view('view-ticket',[
+            'tickets' => $ticket,
+            'events' => $event
+        ]);
+    }
+    
     public function createTickets(Request $request){
+        
+
+
         $request;
         $newTicket = new Ticket();
-        $newTicket->owner = $request->input('owner');
-        $newTicket->qr = $request->input('qr');
-        $newTicket->event = $request->input('event');
+        $newTicket->user_id = Auth::user()->id;
+        $newTicket->qr_hash = Str::random(50);
+        $newTicket->event_id = $request->input('event');
         $newTicket->save();
 
         return redirect() ->route('home');

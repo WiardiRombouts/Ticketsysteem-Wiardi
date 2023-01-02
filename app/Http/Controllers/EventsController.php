@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Facades\Storage;
 
 class EventsController extends Controller
 {
@@ -16,7 +17,7 @@ class EventsController extends Controller
         $request;
         $newEvent = new Event();
         $newEvent->name = $request->input('name');
-        $newEvent->photo = $request->input('photo');
+        // $newEvent->photo = $request->input('photo');
         $newEvent->event_start = $request->input('event_start');
         $newEvent->event_end = $request->input('event_end');
         $newEvent->available_tickets = $request->input('available_tickets');
@@ -24,6 +25,14 @@ class EventsController extends Controller
         $newEvent->price = $request->input('price');
         $newEvent->preorder_price = $request->input('preorder_price');
         $newEvent->description = $request->input('description');
+
+        //Upload image naar Database
+        Storage::makeDirectory('public/images');
+        $src = Storage::putFile('public/images', $request->file('image'));
+        $src = str_replace('public', 'storage', $src);
+        $newEvent->photo = $src;
+
+
         $newEvent->save();
 
 
