@@ -14,7 +14,7 @@
        @csrf
         <div class="form-group m-2">
           <label for="event">Evenement</label>
-          <select name="event" id="event">
+          <select name="event" id="event" required="">
             @foreach ($events as $event)
               {{-- <input type="hidden" value="{{$event->available_tickets}}" name="available_tickets"> --}}
               <option value="{{$event->id}}">{{$event->name}}</option>
