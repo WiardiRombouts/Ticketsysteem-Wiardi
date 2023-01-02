@@ -1,3 +1,4 @@
+
 @extends('layouts.base')
 
 @section('content')
@@ -49,7 +50,7 @@
           <textarea id="description" name="description" class="form-control" rows="4"></textarea>
         </div>
         
-        <button type="submit" class="btn btn-danger">Submit</button>
+        <button type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
   </div>

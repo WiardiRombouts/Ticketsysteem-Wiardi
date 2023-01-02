@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('photo');
-            $table->datetime('event_start');
-            $table->datetime('event_end');
+            $table->date('event_start');
+            $table->date('event_end');
             $table->unsignedBigInteger('available_tickets');
             $table->string('location');
             $table->decimal('price' , 20 , 2);

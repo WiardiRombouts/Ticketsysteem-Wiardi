@@ -34,7 +34,7 @@
           <input type="textbox" id="description" name="description" class="form-control" required="">
         </div>
         
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
   </div>

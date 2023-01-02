@@ -31,23 +31,31 @@ class TicketsController extends Controller
     }
     
     public function createTickets(Request $request){
+        $ticket = Ticket::all();
+        $event = Event::all();
+
         
-
-
+        
+        
+        
         $request;
         $newTicket = new Ticket();
         $newTicket->user_id = Auth::user()->id;
         $newTicket->qr_hash = Str::random(50);
         $newTicket->event_id = $request->input('event');
         $newTicket->save();
+        
+        
 
-        return redirect() ->route('home');
+        
+
+        return redirect() ->route('view-tickets');
     }
 
     public function editTicket(Request $request, $Ticketid)
     {
         $ticket = Ticket::findorFail($Ticketid);
-        $ticket->qr=$request->input ('qr');
+        
         $ticket->save();
     }
 

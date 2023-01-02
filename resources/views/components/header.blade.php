@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-danger">
+<nav class="navbar navbar-expand-lg bg-warning">
   <div class="container-fluid">
     
     <a class="navbar-brand" href="{{route('home')}}">Ticketsysteem</a>
@@ -18,7 +18,7 @@
        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Menu
           </a>
           <ul class="dropdown-menu">
             
