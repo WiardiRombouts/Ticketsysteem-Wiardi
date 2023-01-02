@@ -7,6 +7,7 @@
             
         </thead>
         <tbody>
+            <a href="{{ Route('ticket') }}" class="btn btn-warning">Ga naar ticket pagina</a>
 
             <div class="row row-cols-4">
                 @foreach ($events as $event)
@@ -23,9 +24,7 @@
                         <li class="list-group-item">Locatie: {{$event->location}}</li>
                         <li class="list-group-item">Prijs: {{$event->price}}</li>
                     </ul>
-                    <div class="card-body">
-                        <a href="{{ Route('ticket') }}" class="card-link">Koop Ticket</a>
-                    </div>
+                    
                 </div>
             @endforeach
             </div>

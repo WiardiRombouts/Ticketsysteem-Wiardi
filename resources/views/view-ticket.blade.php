@@ -21,6 +21,10 @@
                         <li class="list-group-item">EindDatum: {{$event->event_end}}</li>
                         <li class="list-group-item">Locatie: {{$event->location}}</li>
                     </ul>
+                    <div class="card-body">
+                        <h3><a class ="bi-trash" id="delete" href={{route('delete_ticket', $ticket->id)}}>Delete ticket</a></h3>
+                        
+                    </div>
                     
                 </div>
             

@@ -65,11 +65,11 @@ class TicketsController extends Controller
     }
 
     
-    public function delete($Ticketid)
+    public function deleteTicket($Ticketid)
     {
         $ticket = Ticket::findorFail($Ticketid);
         $ticket->delete();
 
-        return redirect('admin');
+        return redirect('view-ticket');
     }
 }
