@@ -7,7 +7,7 @@
             
         </thead>
         <tbody>
-            <a href="{{ Route('ticket') }}" class="btn btn-warning">Ga naar ticket pagina</a>
+            {{-- <a href="{{ Route('ticket') }}" class="btn btn-warning">Ga naar ticket pagina</a> --}}
 
             <div class="row row-cols-4">
                 @foreach ($events as $event)
@@ -24,7 +24,14 @@
                         <li class="list-group-item">Locatie: {{$event->location}}</li>
                         <li class="list-group-item">Prijs: {{$event->price}}</li>
                     </ul>
-                    
+                    <div class="card-body">
+                        <form action="{{ Route('createTicket') }}" method="POST">
+                            @csrf
+                            <input type="hidden" id="event" name="event" value="{{$event->id}}">
+                            <button type="submit" class="btn btn-warning">Koop 1 ticket</button>
+
+                        </form>
+                    </div>
                 </div>
             @endforeach
             </div>

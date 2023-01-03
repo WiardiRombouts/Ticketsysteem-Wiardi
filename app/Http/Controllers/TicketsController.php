@@ -41,10 +41,6 @@ class TicketsController extends Controller
         $newTicket->event_id = $request->input('event');
         $newTicket->save();
         
-        
-
-        
-
         return redirect() ->route('view-tickets');
     }
 

@@ -47,7 +47,7 @@
         </div>
         <div class="form-group">
           <label for="description">Beschrijving</label>
-          <textarea id="description" name="description" class="form-control" rows="4"></textarea>
+          <textarea id="description" name="description" class="form-control" rows="4" placeholder="Beschrijving/uitleg van evenemement"></textarea>
         </div>
         
         <button type="submit" class="btn btn-warning">Submit</button>
