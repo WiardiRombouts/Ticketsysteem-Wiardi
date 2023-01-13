@@ -42,7 +42,7 @@
           <input type="number" id="price" name="price" class="form-control" required="">
         </div>
         <div class="form-group col-md-4">
-          <label for="preorder_price">Preoder prijs</label>
+          <label for="preorder_price">Preorder prijs</label>
           <input type="number" id="preorder_price" name="preorder_price" class="form-control" required="">
         </div>
         <div class="form-group">

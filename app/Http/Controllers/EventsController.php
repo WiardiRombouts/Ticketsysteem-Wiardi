@@ -52,14 +52,17 @@ class EventsController extends Controller
     {
         $event = Event::findorFail($Eventid);
         $event->name = $request->input ('name');
-        $event->photo = $request->input('photo');
         $event->event_start = $request->input('event_start');
         $event->event_end = $request->input('event_end');
         $event->available_tickets = $request->input('available_tickets');
         $event->location = $request->input('location');
-        $event->price = $request->input('price');
-        $event->preorder_price = $request->input('preorder_price');
+        // $event->price = $request->input('price');
+        // $event->preorder_price = $request->input('preorder_price');
         $event->description = $request->input('description');
+
+
+        
+
 
         $event->save();
 

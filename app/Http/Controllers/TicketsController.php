@@ -32,7 +32,7 @@ class TicketsController extends Controller
     
     public function createTickets(Request $request){
         $ticket = Ticket::all();
-        
+        $events = Event::all();
         
         $request;
         $newTicket = new Ticket();
