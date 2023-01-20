@@ -34,7 +34,7 @@ Route::get('/dashboard', function () {
 // Route::get('/ticket', [TicketsController::class, ]);
 Route::get('/view-ticket', [TicketsController::class, 'viewTickets'])->middleware('auth')->name('view-tickets');
 Route::get('/tickets', [TicketsController::class, 'viewtemplate'])->middleware(['auth'])->name('ticket');
-Route::post('/createTickets', [TicketsController::class, 'createTickets'])->name('createTicket');
+Route::post('/createTickets/{eventID}', [TicketsController::class, 'createTickets'])->name('createTicket');
 Route::get('/delete-ticket/{id}', [TicketsController::class, 'deleteTicket'])->name('delete_ticket');
 
 

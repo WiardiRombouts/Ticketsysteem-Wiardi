@@ -22,7 +22,7 @@
           </a>
           <ul class="dropdown-menu">
             
-            {{-- <li><a class="dropdown-item" href="{{ Route('event-list') }}">Evenementen Lijst</a></li> --}}
+           
             @if (Auth::user())
               @if (Auth::user() && Auth::user()->is_admin == 1)
               <li><a class="dropdown-item" href="{{ Route('admin') }}">Admin</a></li>

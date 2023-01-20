@@ -25,12 +25,21 @@
                         <li class="list-group-item">Prijs: {{$event->price}}</li>
                     </ul>
                     <div class="card-body">
-                        <form action="{{ Route('createTicket') }}" method="POST">
+                        @if($event->available_tickets > 0)
+                            <form action="{{ Route('createTicket', $event->id) }}" method="POST">
+                                @csrf
+                                <input type="hidden" id="event" name="event" value="{{$event->id}}">
+                                <button type="submit" class="btn btn-warning">Koop 1 ticket</button>
+
+                            </form>
+                        @else
+                        <form action="" method="POST">
                             @csrf
-                            <input type="hidden" id="event" name="event" value="{{$event->id}}">
-                            <button type="submit" class="btn btn-warning">Koop 1 ticket</button>
+                            {{-- <input type="hidden" id="event" name="event" value="{{$event->id}}"> --}}
+                            <button type="submit" class="btn" disabled="">Geen tickets beschikbaar!</button>
 
                         </form>
+                        @endif
                     </div>
                 </div>
             @endforeach

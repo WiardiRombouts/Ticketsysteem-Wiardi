@@ -30,16 +30,25 @@ class TicketsController extends Controller
         ]);
     }
     
-    public function createTickets(Request $request){
+    public function createTickets(Request $request, $eventID){
         $ticket = Ticket::all();
-        $events = Event::all();
+        $event = Event::findOrFail($eventID);
         
-        $request;
-        $newTicket = new Ticket();
-        $newTicket->user_id = Auth::user()->id;
-        $newTicket->qr_hash = Str::random(50);
-        $newTicket->event_id = $request->input('event');
-        $newTicket->save();
+        
+
+        if ($event->available_tickets > 0){
+            $request;
+            $newTicket = new Ticket();
+            $newTicket->user_id = Auth::user()->id;
+            $newTicket->qr_hash = Str::random(50);
+            $newTicket->event_id = $request->input('event');
+            $newTicket->save(); 
+
+            $event->available_tickets --;
+            $event->save();
+        }
+
+        
         
         return redirect() ->route('view-tickets');
     }
